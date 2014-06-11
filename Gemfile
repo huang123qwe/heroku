@@ -11,6 +11,8 @@ gem "pry"
 
 gem "heroku"
 
+gem "devise"
+
 gem 'rails_12factor', group: :production
   
 
