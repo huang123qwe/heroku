@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>测试一下</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <% if admin_signed_in?%>
-    <%= link_to "退出",  destroy_admin_session_path , :method => "DELETE" %>
-  <% end %>
+  <head>
+    <title><%= yield(:title) || "生活随记" %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class='container'>
+      <div class="navbar">
+        <div class="navbar-inner">
+          <%= link_to "#", :class=>"brand" do  %>
+            <%= image_tag 'logo.jpg', width: 50, height: 50%>
+          <% end %>
+          <ul class="nav">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+          <ul class="nav">
+            <% if admin_signed_in?%>
+              <li><%= link_to "退出",  destroy_admin_session_path , :method => "DELETE" %></li>
+            <% else %>
+              <li><a href="#">登录</a></li>
+              <li><a href="#">注册</a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </header>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="#">首页</a> <span class="divider">/</span></li>
+        <li><a href="#">Library</a> <span class="divider">/</span></li>
+        <li class="active">Data</li>
+      </ul>
+    </div>
 
-  <%= yield %>
-
-</body>
+    <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+  </body>
 </html>
+

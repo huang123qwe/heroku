@@ -1,3 +1,8 @@
+<% provide(:title, '登 录') %>
+<% provide(:title, '登 录2') %>
+
+<% content_for :title, "录2", :flush => true %>
+
 <h2>登 录</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
