@@ -14,6 +14,10 @@ gem "heroku"
 gem "devise"
 
 gem 'rails_12factor', group: :production
+
+gem 'bootstrap-sass-rails', '~> 2.3.2.0'
+
+
   
 
 # Use SCSS for stylesheets
