@@ -1,0 +1,22 @@
+<% provide(:title, '登 录') %>
+<% provide(:title, '登 录2') %>
+
+<% content_for :title, "录2", :flush => true %>
+
+<h2>登 录</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <div><%= f.label '密码' %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label "记住我" %></div>
+  <% end -%>
+
+  <div><%= f.submit "登 录" %></div>
+<% end %>
+
+<%= render "admin/shared/links" %>
