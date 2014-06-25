@@ -164,6 +164,7 @@ DEPENDENCIES
   bootstrap-sass-rails (~> 2.3.2.0)
   coffee-rails (~> 4.0.0)
   devise
+  execjs (~> 2.2.0)
   heroku
   jbuilder (~> 2.0)
   jquery-rails
