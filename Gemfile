@@ -11,6 +11,8 @@ gem "pry"
 
 gem "heroku"
 
+gem 'therubyracer' 
+
 gem 'execjs', '~> 2.2.0'
 
 gem "mina"
