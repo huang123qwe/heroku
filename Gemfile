@@ -25,8 +25,8 @@ gem 'bootstrap-sass-rails', '~> 2.3.2.0'
 
 gem 'puma', '~> 2.8.2'
 
+gem 'rails_kindeditor', '~> 0.4.5'
 
-  
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
